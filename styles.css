@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(65deg, #4a3cdb, #ff0a6c, #fec194, #ffe53b, #ff2525);
+  background-size: 120% 120%;
+  animation: gradient-animation 8s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.calculator-container {
+  background-color: black;
+  position: relative;
+  width: 350px;
+  height: 560px;
+  border-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.425);
+  box-shadow: -8px 10px 43px -2px rgba(90, 90, 90, 0.75);
+}
+
+.display {
+  background-color: rgb(31, 31, 31);
+  width: 100%;
+  height: 150px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.prevOp {
+  font-size: 18px;
+  color: rgb(153, 153, 153);
+}
+
+.currentOp {
+  font-size: 44px;
+  color: rgb(233, 233, 233);
+}
+
+.button-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 85px);
+  grid-template-rows: repeat(5, 80px);
+  justify-content: space-between;
+  width: fit-content;
+}
+
+.button-container .span {
+  grid-column: span 2;
+  width: 150px;
+}
+
+button {
+  border: none;
+  border-radius: 40px;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  left: 16px;
+  top: 2px;
+  background-color: rgba(242, 243, 247, 0.5);
+  box-shadow: 4px -2px 8px 0px rgb(245, 245, 245), inset 4px -2px 8px 0px rgba(255, 255, 255, 0.2),
+    4px -2px 12px 0px rgba(255, 255, 255, 0.5), -4px -2px 8px 0px rgba(0, 0, 0, 0.15);
+  color: rgb(58, 58, 58);
+  font-size: 20px;
+  text-align: center;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus,
+button:active {
+  box-shadow: -4px -2px 8px 5px rgba(255, 255, 255, 0.5) inset;
+  color: white;
+  transform: scale(1.1);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
